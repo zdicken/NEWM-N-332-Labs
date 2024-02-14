@@ -16,17 +16,17 @@ public class SubGoal {
 }
 
 public class gAgent : MonoBehaviour {
-    public List<GAction> actions = new List<GAction>();
+    public List<gAction> actions = new List<gAction>();
     public Dictionary<SubGoal, int> goals = new Dictionary<SubGoal, int>();
 
-    GPlanner planner;
-    Queue<GAction> actionQueue;
-    public GAction currentAction;
+    gPlanner planner;
+    Queue<gAction> actionQueue;
+    public gAction currentAction;
     SubGoal currentGoal;
 
     void Start() {
-        GAction[] acts = this.GetComponent<GAction>();
-        foreach(GAction a in acts) { actions.Add(a); }
+        gAction[] acts = this.GetComponents<gAction>();
+        foreach(gAction a in acts) { actions.Add(a); }
     }
 
     void LateUpdate() {

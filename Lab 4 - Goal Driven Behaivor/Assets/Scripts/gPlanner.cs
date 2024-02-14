@@ -1,6 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
+
+public class Node {
+    public Node parent;
+    public float cost;
+    public Dictionary<string, int> state;
+    public gAction action;
+}
 
 public class gPlanner : MonoBehaviour
 {
