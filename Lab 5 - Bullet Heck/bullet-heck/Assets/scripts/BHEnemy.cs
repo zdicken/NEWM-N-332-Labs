@@ -31,7 +31,10 @@ public class BHEnemy : MonoBehaviour {
         if(shootGate < Time.time) {
             shootGate = Time.time + shootDelay;
 
-            GameObject b = Instantiate(bullet, this.transform.position, this.transform.rotation);
+            //GameObject b = Instantiate(bullet, this.transform.position, this.transform.rotation);
+            GameObject b = BHBulletPool.Instance.pool.Get();
+            b.transform.position = this.transform.position;
+            //b.transform.rotation = this.transform.rotation;
             b.GetComponent<BHBullet>().speed = 10f;
             b.transform.right = Quaternion.AngleAxis(angle, Vector3.forward) * Vector3.up;
 
